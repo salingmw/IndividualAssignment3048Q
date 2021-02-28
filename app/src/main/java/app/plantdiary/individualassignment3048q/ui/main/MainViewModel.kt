@@ -36,6 +36,10 @@ class MainViewModel : ViewModel() {
     var countries: MutableLiveData<ArrayList<Country>> = MutableLiveData<ArrayList<Country>>()
     var countryService: CountryService = CountryService()
 
+    init{
+        fetchCountries("e")
+    }
+
     fun fetchCountries(countryName: String) {
         countries = countryService.fetchCountries(countryName)
     }
