@@ -12,7 +12,7 @@ import retrofit2.Response
 
 interface CountryService {
 
-    fun fetchCountries(countryName : String) :MutableLiveData<ArrayList<Country>> {
+    fun fetchCountries() :MutableLiveData<ArrayList<Country>> {
         var _countries = MutableLiveData<ArrayList<Country>>()
         val service = RetrofitClientInstance.retrofitInstance?.create(ICountryDAO::class.java)
         val call = service?.getAllCountries()
